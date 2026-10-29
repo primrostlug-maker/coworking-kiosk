@@ -1,0 +1,41 @@
+<AppLockerPolicy Version="1">
+  <RuleCollection Type="Exe" EnforcementMode="Enabled">
+    <!-- Разрешить системные библиотеки и служебные файлы Windows -->
+    <FilePathRule Id="a94b584e-397a-421f-8898-111111111111" Name="All files in Windows folder" Description="Allow system files" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\*" />
+      </Conditions>
+    </FilePathRule>
+
+    <!-- Разрешить установленные программы в Program Files -->
+    <FilePathRule Id="a94b584e-397a-421f-8898-222222222222" Name="All files in Program Files" Description="Allow standard applications" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\*" />
+      </Conditions>
+    </FilePathRule>
+
+    <!-- Явное разрешение для Veyon Core и Server -->
+    <FilePathRule Id="a94b584e-397a-421f-8898-333333333333" Name="Veyon Core &amp; Server" Description="Ensure Veyon functions" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Veyon\*" />
+      </Conditions>
+    </FilePathRule>
+
+    <!-- Администраторам разрешено выполнение любых программ -->
+    <FilePathRule Id="a94b584e-397a-421f-8898-444444444444" Name="Allow all for Admins" Description="Admin bypass" UserOrGroupSid="S-1-5-32-544" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="*" />
+      </Conditions>
+    </FilePathRule>
+
+    <!-- Запрет исполнения программ с подключенных USB-накопителей -->
+    <FilePathRule Id="a94b584e-397a-421f-8898-555555555555" Name="Block Removable Drives" Description="Deny execution from removable devices" UserOrGroupSid="S-1-5-32-545" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="D:\*" />
+        <FilePathCondition Path="E:\*" />
+        <FilePathCondition Path="F:\*" />
+        <FilePathCondition Path="G:\*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+</AppLockerPolicy>

@@ -1,0 +1,30 @@
+{
+  "General": {
+    "AutoSetHostUser": true,
+    "DefaultPassword": "CoworkingStationPass2026!",
+    "HideSystemDriveC": true
+  },
+  "NetworkShare": {
+    "RootStoragePath": "C:\\Shares",
+    "SharePermissions": "FullControl"
+  },
+  "Veyon": {
+    "ServiceName": "VeyonService",
+    "Ports": [11100, 11200, 11300, 11400],
+    "InstallPath": "C:\\Program Files\\Veyon"
+  },
+  "AllowedApps": [
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files\\Microsoft Office\\root\\Office16\\*.exe",
+    "C:\\Program Files\\Veyon\\veyon-server.exe",
+    "C:\\Windows\\explorer.exe",
+    "C:\\Windows\\system32\\calc.exe",
+    "C:\\Windows\\system32\\mspaint.exe"
+  ],
+  "CleanupPaths": [
+    "AppData\\Local\\Temp\\*",
+    "Downloads\\*",
+    "AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache\\*",
+    "AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache\\*"
+  ]
+}
